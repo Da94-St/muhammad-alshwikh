@@ -21,7 +21,7 @@ export const profile: Profile = {
     'engagements. Multilingual across Arabic, English, German, Turkish, and ' +
     'Japanese.',
   resumePath: '/resume.pdf',
-  availability: 'freelance',
+  availability: 'closed',
   languages: [
     { name: 'Arabic', level: 'Native', fluency: 5 },
     { name: 'English', level: 'Fluent', fluency: 5 },
