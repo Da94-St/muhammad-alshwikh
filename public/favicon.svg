@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 210" width="512" height="512">
+  <defs>
+    <linearGradient id="l" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#1e1b6b"/>
+      <stop offset="55%" stop-color="#3b7fd4"/>
+      <stop offset="100%" stop-color="#7ee0ff"/>
+    </linearGradient>
+    <linearGradient id="r" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0%" stop-color="#0a0b0e"/>
+      <stop offset="60%" stop-color="#14161c"/>
+      <stop offset="100%" stop-color="#1a1d24"/>
+    </linearGradient>
+    <clipPath id="lc"><rect x="0" y="0" width="100" height="210"/></clipPath>
+    <clipPath id="rc"><rect x="100" y="0" width="100" height="210"/></clipPath>
+  </defs>
+  <path d="M 100 8 C 92 18 84 24 76 28 C 62 34 46 32 32 24 C 38 40 42 52 48 62 C 32 56 16 48 4 36 C 12 54 26 70 44 82 C 34 84 24 90 18 100 C 34 104 46 112 54 124 C 44 128 36 134 32 144 C 48 142 62 146 74 156 C 82 162 90 172 96 186 L 100 196 L 104 186 C 110 172 118 162 126 156 C 138 146 152 142 168 144 C 164 134 156 128 146 124 C 154 112 166 104 182 100 C 176 90 166 84 156 82 C 174 70 188 54 196 36 C 184 48 168 56 152 62 C 158 52 162 40 168 24 C 154 32 138 34 124 28 C 116 24 108 18 100 8 Z"
+    fill="url(#l)" clip-path="url(#lc)"/>
+  <path d="M 100 8 C 92 18 84 24 76 28 C 62 34 46 32 32 24 C 38 40 42 52 48 62 C 32 56 16 48 4 36 C 12 54 26 70 44 82 C 34 84 24 90 18 100 C 34 104 46 112 54 124 C 44 128 36 134 32 144 C 48 142 62 146 74 156 C 82 162 90 172 96 186 L 100 196 L 104 186 C 110 172 118 162 126 156 C 138 146 152 142 168 144 C 164 134 156 128 146 124 C 154 112 166 104 182 100 C 176 90 166 84 156 82 C 174 70 188 54 196 36 C 184 48 168 56 152 62 C 158 52 162 40 168 24 C 154 32 138 34 124 28 C 116 24 108 18 100 8 Z"
+    fill="url(#r)" clip-path="url(#rc)"/>
+</svg>

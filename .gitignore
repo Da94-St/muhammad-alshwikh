@@ -1,0 +1,36 @@
+# deps
+node_modules
+.pnpm-store
+
+# build
+dist
+dist-ssr
+
+# env
+.env
+.env.local
+.env.*.local
+!.env.example
+
+# vercel
+.vercel
+
+# local db
+local.db
+local.db-*
+*.sqlite
+*.sqlite-*
+
+# editor / os
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+Thumbs.db
+
+# logs
+*.log
+pnpm-debug.log*
+
+# misc
+*.local
