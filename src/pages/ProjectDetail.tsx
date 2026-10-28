@@ -7,7 +7,7 @@ import { Container } from '../components/layout/Container';
 import { GlassButton } from '../components/glass/GlassButton';
 import { ProjectHero } from '../components/portfolio/ProjectHero';
 import { MediaSlideshow } from '../components/portfolio/MediaSlideshow';
-import { LiveDemoEmbed } from '../components/portfolio/LiveDemoEmbed';
+// Removed LiveDemoEmbed import because iframes are blocked by Vercel
 import NotFound from './NotFound';
 import {
   getProjectBySlug,
@@ -42,7 +42,6 @@ export default function ProjectDetail() {
   if (!project) return <NotFound />;
 
   const { prev, next } = getAdjacentProjects(project.slug);
-  const hasEmbed = Boolean(project.liveEmbed && project.embedUrl);
 
   return (
     <article>
@@ -83,12 +82,15 @@ export default function ProjectDetail() {
             </div>
           )}
 
-          {hasEmbed && project.embedUrl && (
-            <div>
-              <h2 className="mb-4 font-mono text-xs uppercase tracking-widest text-[var(--color-dim)]">
-                Live demo
+          {/* 🚀 FIX: Replaced the broken iframe with a beautiful, functional button */}
+          {project.liveUrl && (
+            <div className="rounded-xl border border-[var(--color-line)] bg-[var(--color-glass)] p-8 flex flex-col items-center justify-center text-center gap-4">
+              <h2 className="font-mono text-xs uppercase tracking-widest text-[var(--color-dim)]">
+                Live Website
               </h2>
-              <LiveDemoEmbed url={project.embedUrl} title={project.title} />
+              <GlassButton onClick={() => window.open(project.liveUrl, '_blank')}>
+                Open Live Demo ↗
+              </GlassButton>
             </div>
           )}
 
