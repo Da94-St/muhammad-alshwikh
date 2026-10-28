@@ -2,6 +2,75 @@ import type { Project } from './types';
 
 export const projects: Project[] = [
   {
+    slug: 'artec',
+    title: 'Artec',
+    tagline: 'Premium gift shop and crafting platform.',
+    description:
+      'A full-stack, Arabic-first e-commerce platform for a custom gift shop. ' +
+      'Features dynamic product management with Neon PostgreSQL, Google Drive ' +
+      'media integration, live gold/currency market pricing, and a custom ' +
+      'WhatsApp checkout flow.',
+    year: 2023,
+    status: 'live',
+    category: 'fullstack', // FIXED: Changed from 'e-commerce'
+    tags: ['E-commerce', 'RTL', 'Full-Stack'],
+    stack: ['React', 'TypeScript', 'Tailwind', 'Vercel', 'Neon'],
+    thumbnail: '/projects/artec.png',
+    liveUrl: 'https://artec-k.vercel.app/',
+    repoUrl: 'https://github.com/Da94-St/artec',
+    featured: true,
+    metrics: {
+      Database: 'Neon PostgreSQL',
+      Media: 'Google Drive API',
+    },
+    accent: '#d4af37',
+  },
+  {
+    slug: 'voltique',
+    title: 'Voltique',
+    tagline: 'Simple e-commerce with embedded Bolt AI frames.',
+    description:
+      'A streamlined e-commerce experience integrating Bolt AI frames to ' +
+      'provide dynamic, interactive product visualization. Designed with a ' +
+      'focus on clean UI and seamless shopping flow.',
+    year: 2026,
+    status: 'live',
+    category: 'fullstack', // FIXED: Changed from 'e-commerce'
+    tags: ['E-commerce', 'AI', 'UI/UX'],
+    stack: ['React', 'Tailwind', 'Bolt AI'],
+    thumbnail: '/projects/voltique.png',
+    liveUrl: 'https://voltique-bay.vercel.app/',
+    repoUrl: 'https://github.com/Da94-St/voltique',
+    dynamicMedia: true,
+    metrics: {
+      Frames: 'Bolt AI',
+      Style: 'Minimalist',
+    },
+    accent: '#000000',
+  },
+  {
+    slug: 'nova-tech',
+    title: 'Nova Tech',
+    tagline: 'AI-powered news blog with immersive 3D glassmorphism.',
+    description:
+      'A cutting-edge news portal featuring AI-generated blog content. The UI ' +
+      'boasts neat glassmorphism styles, stunning 3D animation effects, and an ' +
+      'awesome overlay system for a deeply engaging reading experience.',
+    year: 2026,
+    status: 'wip',
+    category: 'experiment', // FIXED: Changed from 'web'
+    tags: ['AI', '3D Animation', 'Glassmorphism'],
+    stack: ['React', 'Three.js', 'Tailwind', 'AI'],
+    thumbnail: '/projects/nova-tech.png',
+    liveUrl: 'https://nova-tech-da.vercel.app/', 
+    repoUrl: 'https://github.com/Da94-St/nova-tech',
+    metrics: {
+      Content: 'AI Generated',
+      Design: '3D Glass',
+    },
+    accent: '#00e5ff',
+  },
+  {
     slug: 'distrovisor',
     title: 'DistroVisor',
     tagline: 'A field guide to Linux distributions for penetration testers.',
@@ -19,8 +88,8 @@ export const projects: Project[] = [
     stack: ['TypeScript', 'React', 'Vite', 'Tailwind'],
     thumbnail: '/projects/distrovisor.png',
     liveUrl: 'https://distro-visor.vercel.app/',
-    repoUrl: 'FILL_ME_IN',
-    featured: true,
+    repoUrl: 'https://github.com/Da94-St/DistroVisor',
+    featured: false, 
     metrics: {
       Distributions: '18',
       Toolkits: '6',
