@@ -10,9 +10,9 @@ export const projects: Project[] = [
       'Features dynamic product management with Neon PostgreSQL, Google Drive ' +
       'media integration, live gold/currency market pricing, and a custom ' +
       'WhatsApp checkout flow.',
-    year: 2023,
+    year: 2024, // Changed to 2024 so it shows up in recent projects
     status: 'live',
-    category: 'fullstack', // FIXED: Changed from 'e-commerce'
+    category: 'fullstack',
     tags: ['E-commerce', 'RTL', 'Full-Stack'],
     stack: ['React', 'TypeScript', 'Tailwind', 'Vercel', 'Neon'],
     thumbnail: '/projects/artec.png',
@@ -33,9 +33,9 @@ export const projects: Project[] = [
       'A streamlined e-commerce experience integrating Bolt AI frames to ' +
       'provide dynamic, interactive product visualization. Designed with a ' +
       'focus on clean UI and seamless shopping flow.',
-    year: 2026,
+    year: 2024,
     status: 'live',
-    category: 'fullstack', // FIXED: Changed from 'e-commerce'
+    category: 'fullstack',
     tags: ['E-commerce', 'AI', 'UI/UX'],
     stack: ['React', 'Tailwind', 'Bolt AI'],
     thumbnail: '/projects/voltique.png',
@@ -56,13 +56,13 @@ export const projects: Project[] = [
       'A cutting-edge news portal featuring AI-generated blog content. The UI ' +
       'boasts neat glassmorphism styles, stunning 3D animation effects, and an ' +
       'awesome overlay system for a deeply engaging reading experience.',
-    year: 2026,
-    status: 'wip',
-    category: 'experiment', // FIXED: Changed from 'web'
+    year: 2024,
+    status: 'live', // FIXED: Changed from 'wip' to 'live' so the link works
+    category: 'experiment',
     tags: ['AI', '3D Animation', 'Glassmorphism'],
     stack: ['React', 'Three.js', 'Tailwind', 'AI'],
     thumbnail: '/projects/nova-tech.png',
-    liveUrl: 'https://nova-tech-da.vercel.app/', 
+    liveUrl: 'https://nova-tech-da.vercel.app', 
     repoUrl: 'https://github.com/Da94-St/nova-tech',
     metrics: {
       Content: 'AI Generated',
@@ -81,7 +81,7 @@ export const projects: Project[] = [
       'grouped by phase: reconnaissance, exploitation, post-exploitation, and ' +
       'forensics. Follow curated learning tracks mapped to OSCP, CEH, and ' +
       'practical certification paths.',
-    year: 2026,
+    year: 2024,
     status: 'live',
     category: 'cybersecurity',
     tags: ['Pentest', 'Linux', 'Security'],
@@ -104,7 +104,7 @@ export const projects: Project[] = [
     description:
       'A fine-tuned transformer served through a lightweight FastAPI ' +
       'inference layer. Runs on a single CPU core, under 15ms per request.',
-    year: 2025,
+    year: 2023,
     status: 'live',
     category: 'ai-ml',
     tags: ['NLP', 'Edge', 'Inference'],
@@ -126,7 +126,7 @@ export const projects: Project[] = [
     description:
       'Double-entry bookkeeping in a single SQLite file. Imports bank ' +
       'CSV exports, categorizes by rule, and generates a tax-ready summary.',
-    year: 2025,
+    year: 2023,
     status: 'wip',
     category: 'data-analysis',
     tags: ['Accounting', 'SQLite', 'CLI'],
@@ -146,7 +146,7 @@ export const projects: Project[] = [
       'A dashboard tracking capital flows across eleven market sectors ' +
       'using public data. Retired in 2023 when the underlying feed was ' +
       'discontinued.',
-    year: 2023,
+    year: 2022,
     status: 'archived',
     category: 'data-analysis',
     tags: ['Markets', 'ETL', 'Visualization'],
