@@ -4,7 +4,11 @@ import { GlassButton } from '../glass/GlassButton';
 
 export function ProjectHero({ project }: { project: Project }) {
   return (
-    <div className="relative overflow-hidden border-b border-[var(--color-line)] bg-[var(--color-bg-2)] py-20 md:py-32">
+    /* 
+      FIX: Removed 'border-b' and 'bg-[var(--color-bg-2)]' 
+      to let the seamless glass texture flow through the whole page.
+    */
+    <div className="relative overflow-hidden py-20 md:py-32">
       {/* Background Accent Glow */}
       <div 
         className="absolute left-1/2 top-0 h-[500px] w-[800px] -translate-x-1/2 opacity-20 blur-[100px] pointer-events-none"
@@ -33,7 +37,6 @@ export function ProjectHero({ project }: { project: Project }) {
           ))}
         </div>
 
-        {/* 🚀 Restored the GlassButton style but using window.open to bypass Vercel block */}
         <div className="flex flex-wrap items-center justify-center gap-4">
           {project.liveUrl && (
             <GlassButton 
