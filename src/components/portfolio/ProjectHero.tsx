@@ -1,74 +1,61 @@
-import { Link } from 'react-router-dom';
-import { routes } from '../../lib/routes';
-import { StatusChip } from './StatusChip';
-import { TechStack } from './TechStack';
-import { VectorBoundingBox } from '../glass/VectorBoundingBox';
-import { formatCategory } from '../../lib/format';
 import type { Project } from '../../data/types';
+import { StatusChip } from './StatusChip';
 
 export function ProjectHero({ project }: { project: Project }) {
-  const hasLive =
-    Boolean(project.liveUrl) && project.liveUrl !== 'FILL_ME_IN';
-  const hasRepo =
-    Boolean(project.repoUrl) && project.repoUrl !== 'FILL_ME_IN';
-
   return (
-    <header className="border-b border-[var(--color-line)]">
-      <div className="mx-auto w-[90vw] max-w-[1280px] py-16 md:py-24">
-        <Link to={routes.projects} className="glass-pill mb-8 inline-flex">
-          ← All projects
-        </Link>
+    <div className="relative overflow-hidden border-b border-[var(--color-line)] bg-[var(--color-bg-2)] py-20 md:py-32">
+      {/* Optional Background Accent */}
+      <div 
+        className="absolute left-1/2 top-0 h-[500px] w-[800px] -translate-x-1/2 opacity-20 blur-[100px] pointer-events-none"
+        style={{ backgroundColor: project.accent || 'var(--color-accent)' }}
+      />
 
-        <div className="mb-5 flex flex-wrap items-center gap-3">
+      <div className="relative mx-auto max-w-4xl px-6 text-center z-10">
+        <div className="mb-6 flex items-center justify-center gap-4">
           <StatusChip status={project.status} />
-          <span className="font-mono text-sm uppercase tracking-widest text-[var(--color-dim)]">
-            {formatCategory(project.category)} · {project.year}
-          </span>
+          <span className="font-mono text-sm text-[var(--color-dim)]">{project.year}</span>
         </div>
 
-        <h1 className="text-4xl font-bold tracking-tight text-[var(--color-ink)] md:text-5xl">
+        <h1 className="mb-4 text-4xl font-extrabold tracking-tight text-[var(--color-ink)] md:text-6xl">
           {project.title}
         </h1>
-        <p className="project-hero__tagline mt-5 max-w-2xl text-[var(--color-dim)]">
+        
+        <p className="mx-auto mb-8 max-w-2xl text-lg text-[var(--color-dim)] md:text-xl">
           {project.tagline}
         </p>
 
-        {project.stack.length > 0 && (
-          <div className="mt-8">
-            <TechStack items={project.stack} />
-          </div>
-        )}
+        <div className="flex flex-wrap items-center justify-center gap-3">
+          {project.tags.map(tag => (
+            <span key={tag} className="rounded-full border border-[var(--color-line)] bg-[var(--color-glass)] px-3 py-1 font-mono text-xs uppercase tracking-wider text-[var(--color-dim)]">
+              {tag}
+            </span>
+          ))}
+        </div>
 
-        {(hasLive || hasRepo) && (
-          <div className="mt-12 flex flex-wrap items-center gap-8">
-            {hasLive && project.liveUrl && (
-              <VectorBoundingBox
-                label="Live site"
-                hoverLabel="Open in new tab"
-                hint1="Click to open"
-                focusLabel="Press Enter to open in a new tab"
-                onClick={() =>
-                  window.open(
-                    project.liveUrl,
-                    '_blank',
-                    'noopener,noreferrer',
-                  )
-                }
-              />
-            )}
-            {hasRepo && project.repoUrl && (
-              <a
-                href={project.repoUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="glass-pill"
-              >
-                Source ↗
-              </a>
-            )}
-          </div>
-        )}
+        {/* 🚀 THE FIX: This is now a standard <a> tag, not an iframe or dead button */}
+        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+          {project.liveUrl && (
+            <a
+              href={project.liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 rounded-lg bg-[var(--color-ink)] px-6 py-3 text-sm font-semibold text-[var(--color-bg)] transition-transform hover:scale-105"
+            >
+              Live Site ↗
+            </a>
+          )}
+          {project.repoUrl && (
+            <a
+              href={project.repoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 rounded-lg border border-[var(--color-line)] bg-[var(--color-glass)] px-6 py-3 text-sm font-semibold text-[var(--color-ink)] transition-colors hover:border-[var(--color-accent)]"
+            >
+              Source ↗
+            </a>
+          )}
+        </div>
       </div>
-    </header>
+    </div>
   );
 }
