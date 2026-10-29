@@ -1,10 +1,11 @@
 import type { Project } from '../../data/types';
 import { StatusChip } from './StatusChip';
+import { GlassButton } from '../glass/GlassButton';
 
 export function ProjectHero({ project }: { project: Project }) {
   return (
     <div className="relative overflow-hidden border-b border-[var(--color-line)] bg-[var(--color-bg-2)] py-20 md:py-32">
-      {/* Optional Background Accent */}
+      {/* Background Accent Glow */}
       <div 
         className="absolute left-1/2 top-0 h-[500px] w-[800px] -translate-x-1/2 opacity-20 blur-[100px] pointer-events-none"
         style={{ backgroundColor: project.accent || 'var(--color-accent)' }}
@@ -24,7 +25,7 @@ export function ProjectHero({ project }: { project: Project }) {
           {project.tagline}
         </p>
 
-        <div className="flex flex-wrap items-center justify-center gap-3">
+        <div className="flex flex-wrap items-center justify-center gap-3 mb-10">
           {project.tags.map(tag => (
             <span key={tag} className="rounded-full border border-[var(--color-line)] bg-[var(--color-glass)] px-3 py-1 font-mono text-xs uppercase tracking-wider text-[var(--color-dim)]">
               {tag}
@@ -32,27 +33,23 @@ export function ProjectHero({ project }: { project: Project }) {
           ))}
         </div>
 
-        {/* 🚀 THE FIX: This is now a standard <a> tag, not an iframe or dead button */}
-        <div className="mt-10 flex flex-wrap items-center justify-center gap-4">
+        {/* 🚀 Restored the GlassButton style but using window.open to bypass Vercel block */}
+        <div className="flex flex-wrap items-center justify-center gap-4">
           {project.liveUrl && (
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-lg bg-[var(--color-ink)] px-6 py-3 text-sm font-semibold text-[var(--color-bg)] transition-transform hover:scale-105"
+            <GlassButton 
+              onClick={() => window.open(project.liveUrl, '_blank')}
+              className="flex items-center gap-2"
             >
               Live Site ↗
-            </a>
+            </GlassButton>
           )}
           {project.repoUrl && (
-            <a
-              href={project.repoUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="flex items-center gap-2 rounded-lg border border-[var(--color-line)] bg-[var(--color-glass)] px-6 py-3 text-sm font-semibold text-[var(--color-ink)] transition-colors hover:border-[var(--color-accent)]"
+            <GlassButton 
+              onClick={() => window.open(project.repoUrl, '_blank')}
+              className="flex items-center gap-2"
             >
               Source ↗
-            </a>
+            </GlassButton>
           )}
         </div>
       </div>

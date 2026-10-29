@@ -2,11 +2,9 @@ import { GlassCard } from '../glass/GlassCard';
 
 export function LiveDemoEmbed({ url, title }: { url: string; title: string }) {
   return (
-    <a 
-      href={url} 
-      target="_blank" 
-      rel="noopener noreferrer" 
-      className="block group w-full"
+    <div 
+      onClick={() => window.open(url, '_blank')}
+      className="block cursor-pointer group w-full"
     >
       <GlassCard className="relative flex h-[250px] w-full items-center justify-center overflow-hidden transition-all hover:scale-[1.01] hover:border-[var(--color-accent)] border border-[var(--color-line)]">
         <div className="text-center relative z-10">
@@ -18,6 +16,6 @@ export function LiveDemoEmbed({ url, title }: { url: string; title: string }) {
           </p>
         </div>
       </GlassCard>
-    </a>
+    </div>
   );
 }
