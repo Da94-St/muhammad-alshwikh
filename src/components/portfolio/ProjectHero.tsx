@@ -4,10 +4,6 @@ import { GlassButton } from '../glass/GlassButton';
 
 export function ProjectHero({ project }: { project: Project }) {
   return (
-    /* 
-      FIX: Removed 'border-b' and 'bg-[var(--color-bg-2)]' 
-      to let the seamless glass texture flow through the whole page.
-    */
     <div className="relative overflow-hidden py-20 md:py-32">
       {/* Background Accent Glow */}
       <div 
@@ -38,21 +34,20 @@ export function ProjectHero({ project }: { project: Project }) {
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-4">
+          {/* FIXED: Wrapped in <a> tags for guaranteed external routing */}
           {project.liveUrl && (
-            <GlassButton 
-              onClick={() => window.open(project.liveUrl, '_blank')}
-              className="flex items-center gap-2"
-            >
-              Live Site ↗
-            </GlassButton>
+            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+              <GlassButton className="flex items-center gap-2 pointer-events-none">
+                Live Site ↗
+              </GlassButton>
+            </a>
           )}
           {project.repoUrl && (
-            <GlassButton 
-              onClick={() => window.open(project.repoUrl, '_blank')}
-              className="flex items-center gap-2"
-            >
-              Source ↗
-            </GlassButton>
+            <a href={project.repoUrl} target="_blank" rel="noopener noreferrer">
+              <GlassButton className="flex items-center gap-2 pointer-events-none">
+                Source ↗
+              </GlassButton>
+            </a>
           )}
         </div>
       </div>
